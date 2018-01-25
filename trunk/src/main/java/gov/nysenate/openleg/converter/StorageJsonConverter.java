@@ -70,9 +70,13 @@ public class StorageJsonConverter
         this.prettyPrinter = new DefaultPrettyPrinter();
     }
 
-    public void write(Transcript value, File storageFile) throws IOException
+    public void write(Transcript value, File storageFile)
     {
-        write(value, new FileOutputStream(storageFile));
+    	try {
+    		write(value, new FileOutputStream(storageFile));
+    	} catch (IOException e) {
+    		System.out.println("Exception IO");
+    	}
     }
 
     public void write(Bill value, File storageFile) throws IOException
