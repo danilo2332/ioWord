@@ -79,25 +79,43 @@ public class StorageJsonConverter
     	}
     }
 
-    public void write(Bill value, File storageFile) throws IOException
+    public void write(Bill value, File storageFile) 
     {
-        write(value, new FileOutputStream(storageFile));
+    	try {
+    		write(value, new FileOutputStream(storageFile));
+    	} catch (IOException e) {
+    		System.out.println("Exception IO");
+    	}
     }
 
-    public void write(Agenda value, File storageFile) throws IOException
-    {
-        write(value, new FileOutputStream(storageFile));
+    public void write(Agenda value, File storageFile) 
+    {	
+    	try {
+			write(value, new FileOutputStream(storageFile));
+		} catch (IOException e) {
+		System.out.println("Exception IO");
+		}
     }
+    	
+    
 
-    public void write(Meeting value, File storageFile) throws IOException
+    public void write(Meeting value, File storageFile)
     {
-        write(value, new FileOutputStream(storageFile));
-    }
+    	try {
+    		write(value, new FileOutputStream(storageFile));
+	} catch (IOException e) {
+		System.out.println("Exception IO");
+	}
+}
 
-    public void write(Calendar value, File storageFile) throws IOException
+    public void write(Calendar value, File storageFile) 
     {
-        write(value, new FileOutputStream(storageFile));
-    }
+    	try {
+    		write(value, new FileOutputStream(storageFile));
+	} catch (IOException e) {
+		System.out.println("Exception IO");
+	}
+}
 
     public String toString(Transcript value) throws IOException
     {
