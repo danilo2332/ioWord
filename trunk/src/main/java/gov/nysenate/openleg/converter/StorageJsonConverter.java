@@ -152,31 +152,60 @@ public class StorageJsonConverter
         return stream.toString(this.encoding);
     }
 
-    public Transcript readTranscript(File storageFile) throws JsonProcessingException, IOException
+    public Transcript readTranscript(File storageFile)
     {
+    	try {
         return readTranscript(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
+    	} catch(JsonProcessingException e) {
+    		System.out.println("Json Error");
+    	} catch(IOException e) {
+    		System.out.println("Error IO");
+    	}
     }
 
     public Bill readBill(File storageFile) throws JsonProcessingException, IOException
     {
+    	try {
         return readBill(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
+    	}catch(JsonProcessingException e) {
+    		System.out.println("Json Error");
+    	} catch(IOException e) {
+    		System.out.println("Error IO");
+    	}
     }
 
     public Agenda readAgenda(File storageFile) throws JsonProcessingException, IOException
     {
-        return readAgenda(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
-    }
+    	try {
+    	return readAgenda(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
+    	}catch(JsonProcessingException e) {
+    		System.out.println("Json Error");
+    	} catch(IOException e) {
+    		System.out.println("Error IO");
+	}
+}
 
     public Meeting readMeeting(File storageFile) throws JsonProcessingException, IOException
     {
+    	try {
         return readMeeting(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
-    }
+    	}catch(JsonProcessingException e) {
+    		System.out.println("Json Error");
+    	} catch(IOException e) {
+    		System.out.println("Error IO");
+	}
+}
 
-    public Calendar readCalendar(File storageFile) throws JsonProcessingException, IOException
+    public Calendar readCalendar(File storageFile) throws JsonProcessingException, IOException // fino a qui
     {
+    	try {
         return readCalendar(new InputStreamReader(new FileInputStream(storageFile), this.encoding));
-    }
-
+    	}catch(JsonProcessingException e) {
+    		System.out.println("Json Error");
+    	} catch(IOException e) {
+    		System.out.println("Error IO");
+	}
+}
     public Bill readBill(String data) throws JsonProcessingException, IOException
     {
         return readBill(new StringReader(data));
