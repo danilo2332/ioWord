@@ -5,9 +5,9 @@
 	SenateResponse sr = (SenateResponse)request.getAttribute("results");
 	int total = (Integer)sr.getMetadataByKey("totalresults");
 	String term = java.net.URLEncoder.encode((String)request.getAttribute("term"), "UTF-8");
-%>
-<li><em><%=total%> total results... (<a href="<%=JSPHelper.getLink(request, "/search/?term="+term)%>">view all</a>)</em></li>
-<%
+	
+	out.printf("<li><em>%.2f total results... (<a href="<%=JSPHelper.getLink(request, "/search/?term="+term)%>">view all</a>)</em></li>\n",total);
+    
     Iterator<Result> it = sr.getResults().iterator();
     while (it.hasNext()) {
         try {

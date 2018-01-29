@@ -1,5 +1,5 @@
 <%@ page language="java" import="org.apache.commons.lang.StringUtils, gov.nysenate.openleg.util.ResultIterator,java.util.*,java.text.*,gov.nysenate.openleg.*,gov.nysenate.openleg.model.*,gov.nysenate.openleg.util.*"  contentType="text/plain" pageEncoding="utf-8" %>
-<%!
+<%
 public String format(String str) {
 	if(str == null)
 		return ",";
@@ -10,7 +10,6 @@ public String format(String str) {
 
 	return "," + str;
 }
-%><%
 String contentType = (String) request.getAttribute("contentType");
 response.setContentType(contentType == null ? "text/html" : contentType);
 
