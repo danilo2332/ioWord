@@ -373,7 +373,7 @@ public class LBDConnect {
         return channel;
     }
 
-    private void writeDataFromLbdc(String uri) throws IOException {
+    private void writeDataFromLbdc(String uri) {
         logger.info("Reading " + uri + " from LBDC");
         SocketChannel channel = getSocketChannel(BASE_URL, uri);
 
@@ -392,5 +392,7 @@ public class LBDConnect {
         local.close();
         out.close();
         channel.close();
-    }
-}
+        
+    
+	}
+   

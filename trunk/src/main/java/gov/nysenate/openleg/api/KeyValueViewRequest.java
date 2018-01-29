@@ -59,6 +59,9 @@ public class KeyValueViewRequest extends AbstractApiRequest {
         } catch (QueryBuilderException e) {
             logger.error("Invalid query construction", e);
             throw new ApiRequestException("Invalid query construction", e);
+            
+        } catch (ApiRequestException e) {
+        	System.out.println(e.getMessage());
         }
 
         try {

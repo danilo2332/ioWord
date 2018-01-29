@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+import org.omg.CORBA.portable.ApplicationException;
 
 public class MultiViewRequest extends AbstractApiRequest {
     private final Logger logger = Logger.getLogger(MultiViewRequest.class);
@@ -62,8 +63,10 @@ public class MultiViewRequest extends AbstractApiRequest {
         } catch (QueryBuilderException e) {
             logger.error("Invalid query construction", e);
             throw new ApiRequestException("Invalid query construction", e);
+        }  catch (ApiRequestException e) {
+        	System.out.println(e.getMessage());
         }
-
+        
         try {
             sr = Application.getLucene().search(queryBuilder.query(), start, pageSize, sortField, sortOrder);
         }

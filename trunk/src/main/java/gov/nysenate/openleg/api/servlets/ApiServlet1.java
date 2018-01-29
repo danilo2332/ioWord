@@ -251,6 +251,8 @@ public class ApiServlet1 extends HttpServlet
                 } catch (COSVisitorException e) {
                     logger.error(e.getMessage(), e);
                     throw new ApiRequestException("internal server error.", e);
+                } catch (ApiRequestException e) {
+                	System.out.println(e.getMessage());
                 }
             }
             else if (format.equals("html") || format.equals("html-print")) {

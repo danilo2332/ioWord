@@ -66,9 +66,13 @@ public class AdvancedSearchServlet extends HttpServlet
         }
         catch (IOException e) {
             throw new ServletException(e);
+           
+        } catch (ServletException e) {
+        	System.out.println(e.getMessage());
         }
 
-    }
+    } 
+        
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {

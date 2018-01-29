@@ -174,6 +174,10 @@ public class ApiServlet2 extends HttpServlet
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
             throw new ApiRequestException("internal server error.", e);
+          
+            } catch (ApiRequestException e) {
+            	System.out.println(e.getMessage());
+            }
         }
     }
 }
